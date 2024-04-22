@@ -73,6 +73,9 @@ tput cnorm
 sldns() {
 wget raw.githubusercontent.com/Dharmavpn/v/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 }
+res1() {
+wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+}
 clear
 echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│ ${WH}Please select a your Choice to Set Domain              ${NC}"
@@ -116,7 +119,7 @@ done
 if [[ $domain2 == "1" ]]; then
 clear
 echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.pirang.cloud       $COLOR1│${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.airhitam.my.id     $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
 echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
 echo " "
