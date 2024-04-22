@@ -17,7 +17,6 @@ echo -e "$COLOR1└────────────────────�
 
 #hapus menu
 rm -rf menu
-rm -rf noobz
 rm -rf m-vmess
 rm -rf m-vless
 rm -rf m-trojan
@@ -50,7 +49,6 @@ rm -rf bantwidth
 # download menu
 cd /usr/bin
 rm -rf menu
-rm -rf m-noobz
 rm -rf m-vmess
 rm -rf m-vless
 rm -rf m-trojan
@@ -109,37 +107,36 @@ fun_bar() {
 }
 res1() {
     
-wget -O /usr/bin/menu "https://mulyono.serv00.net/Repository/menu/menu.sh" && chmod +x /usr/bin/menu
-wget -q -O /usr/bin/m-noobz "https://mulyono.serv00.net/Repository/menu/m-noobz.sh" && chmod +x /usr/bin/m-noobz
-wget -O /usr/bin/m-vmess "https://mulyono.serv00.net/Repository/menu/m-vmess.sh" && chmod +x /usr/bin/m-vmess
-wget -O /usr/bin/m-vless "https://mulyono.serv00.net/Repository/menu/m-vless.sh" && chmod +x /usr/bin/m-vless
-wget -O /usr/bin/m-trojan "https://mulyono.serv00.net/Repository/menu/m-trojan.sh" && chmod +x /usr/bin/m-trojan
-wget -O /usr/bin/m-system "https://mulyono.serv00.net/Repository/menu/m-system.sh" && chmod +x /usr/bin/m-system
-wget -O /usr/bin/m-sshovpn "https://mulyono.serv00.net/Repository/menu/m-sshovpn.sh" && chmod +x /usr/bin/m-sshovpn
-wget -O /usr/bin/m-ssws "https://mulyono.serv00.net/Repository/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
-wget -O /usr/bin/running "https://mulyono.serv00.net/Repository/menu/running.sh" && chmod +x /usr/bin/running
-wget -O /usr/bin/m-update "https://mulyono.serv00.net/Repository/menu/m-update.sh" && chmod +x /usr/bin/m-update
-wget -O /usr/bin/m-backup "https://mulyono.serv00.net/Repository/menu/m-backup.sh" && chmod +x /usr/bin/m-backup
-wget -O /usr/bin/m-theme "https://mulyono.serv00.net/Repository/menu/m-theme.sh" && chmod +x /usr/bin/m-theme
-wget -O /usr/bin/m-ip "https://mulyono.serv00.net/Repository/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
-wget -O /usr/bin/m-bot "https://mulyono.serv00.net/Repository/menu/m-bot.sh" && chmod +x /usr/bin/m-bot
-wget -O /usr/bin/update "https://mulyono.serv00.net/Repository/menu/update.sh" && chmod +x /usr/bin/update
-wget -O /usr/bin/ws-dropbear "https://mulyono.serv00.net/Repository/sshws/ws-dropbear" && chmod +x /usr/bin/ws-dropbear
-wget -O /usr/bin/bckpbot "https://mulyono.serv00.net/Repository/menu/bckpbot.sh" && chmod +x /usr/bin/bckpbot
-wget -O /usr/bin/tendang "https://mulyono.serv00.net/Repository/menu/tendang.sh" && chmod +x /usr/bin/tendang
-wget -O /usr/bin/bottelegram "https://mulyono.serv00.net/Repository/menu/bottelegram.sh" && chmod +x /usr/bin/bottelegram
-wget -O /usr/bin/backup "https://mulyono.serv00.net/Repository/menu/backup.sh" && chmod +x /usr/bin/backup
-wget -O /usr/bin/restore "https://mulyono.serv00.net/Repository/menu/restore.sh" && chmod +x /usr/bin/restore
-wget -O /usr/bin/cleaner "https://mulyono.serv00.net/Repository/install/cleaner.sh" && chmod +x /usr/bin/cleaner
-wget -O /usr/bin/m-allxray "https://mulyono.serv00.net/Repository/menu/m-allxray.sh" && chmod +x /usr/bin/m-allxray
-wget -O /usr/bin/xraylimit "https://mulyono.serv00.net/Repository/menu/xraylimit.sh" && chmod +x /usr/bin/xraylimit
-wget -O /usr/bin/xp "https://mulyono.serv00.net/Repository/install/xp.sh" && chmod +x /usr/bin/xp
-wget -O /usr/bin/trialvmess "https://mulyono.serv00.net/Repository/menu/trialvmess.sh" && chmod +x /usr/bin/trialvmess
-wget -O /usr/bin/trialvless "https://mulyono.serv00.net/Repository/menu/trialtrojan.sh" && chmod +x /usr/bin/trialtrojan
-wget -O /usr/bin/trialtrojan "https://mulyono.serv00.net/Repository/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
-wget -O /usr/bin/trialssh "https://mulyono.serv00.net/Repository/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
-wget -O /usr/bin/autocpu "https://mulyono.serv00.net/Repository/install/autocpu.sh" && chmod +x /usr/bin/autocpu
-wget -O /usr/bin/bantwidth "https://mulyono.serv00.net/Repository/install/bantwidth" && chmod +x /usr/bin/autocpu
+wget -O /usr/bin/menu "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/menu.sh" && chmod +x /usr/bin/menu
+wget -O /usr/bin/m-vmess "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-vmess.sh" && chmod +x /usr/bin/m-vmess
+wget -O /usr/bin/m-vless "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-vless.sh" && chmod +x /usr/bin/m-vless
+wget -O /usr/bin/m-trojan "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-trojan.sh" && chmod +x /usr/bin/m-trojan
+wget -O /usr/bin/m-system "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-system.sh" && chmod +x /usr/bin/m-system
+wget -O /usr/bin/m-sshovpn "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-sshovpn.sh" && chmod +x /usr/bin/m-sshovpn
+wget -O /usr/bin/m-ssws "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
+wget -O /usr/bin/running "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/running.sh" && chmod +x /usr/bin/running
+wget -O /usr/bin/m-update "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-update.sh" && chmod +x /usr/bin/m-update
+wget -O /usr/bin/m-backup "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-backup.sh" && chmod +x /usr/bin/m-backup
+wget -O /usr/bin/m-theme "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-theme.sh" && chmod +x /usr/bin/m-theme
+wget -O /usr/bin/m-ip "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
+wget -O /usr/bin/m-bot "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-bot.sh" && chmod +x /usr/bin/m-bot
+wget -O /usr/bin/update "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/update.sh" && chmod +x /usr/bin/update
+wget -O /usr/bin/ws-dropbear "https://raw.githubusercontent.com/Dharmavpn/v/main/sshws/ws-dropbear" && chmod +x /usr/bin/ws-dropbear
+wget -O /usr/bin/bckpbot "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/bckpbot.sh" && chmod +x /usr/bin/bckpbot
+wget -O /usr/bin/tendang "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/tendang.sh" && chmod +x /usr/bin/tendang
+wget -O /usr/bin/bottelegram "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/bottelegram.sh" && chmod +x /usr/bin/bottelegram
+wget -O /usr/bin/backup "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/backup.sh" && chmod +x /usr/bin/backup
+wget -O /usr/bin/restore "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/restore.sh" && chmod +x /usr/bin/restore
+wget -O /usr/bin/cleaner "https://raw.githubusercontent.com/Dharmavpn/v/main/install/cleaner.sh" && chmod +x /usr/bin/cleaner
+wget -O /usr/bin/m-allxray "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-allxray.sh" && chmod +x /usr/bin/m-allxray
+wget -O /usr/bin/xraylimit "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/xraylimit.sh" && chmod +x /usr/bin/xraylimit
+wget -O /usr/bin/xp "https://raw.githubusercontent.com/Dharmavpn/v/main/install/xp.sh" && chmod +x /usr/bin/xp
+wget -O /usr/bin/trialvmess "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/trialvmess.sh" && chmod +x /usr/bin/trialvmess
+wget -O /usr/bin/trialvless "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/trialtrojan.sh" && chmod +x /usr/bin/trialtrojan
+wget -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
+wget -O /usr/bin/trialssh "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
+wget -O /usr/bin/autocpu "https://raw.githubusercontent.com/Dharmavpn/v/main/install/autocpu.sh" && chmod +x /usr/bin/autocpu
+wget -O /usr/bin/bantwidth "https://raw.githubusercontent.com/Dharmavpn/v/main/install/bantwidth" && chmod +x /usr/bin/autocpu
 chmod +x menu
 chmod +x m-vmess
 chmod +x m-vless
