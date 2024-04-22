@@ -81,7 +81,7 @@ rm -rf /etc/github
 mkdir /etc/github
 curl -s https://pastebin.com/raw/8uSxmE9q > /etc/github/api
 curl -s https://pastebin.com/raw/3ZbB5r7m > /etc/github/email
-curl -s https://pastebin.com/raw/bSskAgjw > /etc/github/username
+curl -s https://pastebin.com/raw/FHJSG3Zg > /etc/github/username
 clear
 APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
@@ -128,9 +128,9 @@ if [[ $kode == "DHARMAVIP" ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
 rm -rf /etc/github
 mkdir /etc/github
-curl -s https://pastebin.com/raw/t3aaqcej > /etc/github/api
-curl -s https://pastebin.com/raw/cfivDKk2 > /etc/github/email
-curl -s https://pastebin.com/raw/bSskAgjw > /etc/github/username
+curl -s https://pastebin.com/raw/8uSxmE9q > /etc/github/api
+curl -s https://pastebin.com/raw/3ZbB5r7m > /etc/github/email
+curl -s https://pastebin.com/raw/FHJSG3Zg > /etc/github/username
 clear
 APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
@@ -159,9 +159,9 @@ MYIP2=$(curl -sS ipv4.icanhazip.com)
 author2=$(cat /etc/profil)
 rm -rf /etc/github
 mkdir /etc/github
-curl -s https://pastebin.com/raw/t3aaqcej > /etc/github/api
-curl -s https://pastebin.com/raw/cfivDKk2 > /etc/github/email
-curl -s https://pastebin.com/raw/bSskAgjw > /etc/github/username
+curl -s https://pastebin.com/raw/8uSxmE9q > /etc/github/api
+curl -s https://pastebin.com/raw/3ZbB5r7m > /etc/github/email
+curl -s https://pastebin.com/raw/FHJSG3Zg > /etc/github/username
 clear
 APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
@@ -190,9 +190,9 @@ MYIP3=$(curl -sS ipv4.icanhazip.com)
 author3=$(cat /etc/profil)
 rm -rf /etc/github
 mkdir /etc/github
-curl -s https://pastebin.com/raw/t3aaqcej > /etc/github/api
-curl -s https://pastebin.com/raw/cfivDKk2 > /etc/github/email
-curl -s https://pastebin.com/raw/bSskAgjw > /etc/github/username
+curl -s https://pastebin.com/raw/8uSxmE9q > /etc/github/api
+curl -s https://pastebin.com/raw/3ZbB5r7m > /etc/github/email
+curl -s https://pastebin.com/raw/FHJSG3Zg > /etc/github/username
 clear
 APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
@@ -220,9 +220,9 @@ elif [[ $kode == $Key ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
 rm -rf /etc/github
 mkdir /etc/github
-curl -s https://pastebin.com/raw/t3aaqcej > /etc/github/api
-curl -s https://pastebin.com/raw/cfivDKk2 > /etc/github/email
-curl -s https://pastebin.com/raw/bSskAgjw > /etc/github/username
+curl -s https://pastebin.com/raw/8uSxmE9q > /etc/github/api
+curl -s https://pastebin.com/raw/3ZbB5r7m > /etc/github/email
+curl -s https://pastebin.com/raw/FHJSG3Zg > /etc/github/username
 clear
 APIGIT=$(cat /etc/github/api)
 EMAILGIT=$(cat /etc/github/email)
