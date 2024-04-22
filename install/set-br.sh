@@ -3,7 +3,7 @@
 apt install rclone
 printf "q\n" | rclone config
 wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/Dharmavpn/v/main/install/rclone.conf"
-git clone  https://github.com/Hunterscrip/wondershaper.git
+git clone  https://github.com/casper9/wondershaper.git
 cd wondershaper
 make install
 cd
@@ -51,9 +51,9 @@ service cron restart > /dev/null 2>&1
 
 # > Pasang Limit
 
-#wget "https://raw.githubusercontent.com/Dharmavpn/v/main/bin/limit.sh" >/dev/null 2>&1
+wget "https://raw.githubusercontent.com/Dharmavpn/v/main/bin/limit.sh" >/dev/null 2>&1
 
-#chmod +x limit.sh && bash limit.sh >/dev/null 2>&1
+chmod +x limit.sh && bash limit.sh >/dev/null 2>&1
     
 rm -f /root/set-br.sh
-#rm -f /root/limit.sh
+rm -f /root/limit.sh
