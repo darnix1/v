@@ -617,7 +617,7 @@ EOF
 cat <<EOF>> /etc/rmbl/theme/color.conf
 lightcyan
 EOF
-function Casper2(){
+function Rmbl2(){
 cd
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
@@ -631,7 +631,7 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
 }
-function Casper3(){
+function Rmbl3(){
 fun_bar() {
     CMD[0]="$1"
     CMD[1]="$2"
@@ -780,7 +780,7 @@ clear
 }
 
 CEKIP
-Casper3
+Rmbl3
 cat> /root/.profile << END
 if [ "$BASH" ]; then
 if [ -f ~/.bashrc ]; then
