@@ -9,21 +9,21 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
 echo -ne
 else
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC} ${COLBG1}          ${WH}• AUTOSCRIPT PREMIUM •               ${NC} $COLOR1 $NC"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "            ${RED}PERMISSION DENIED !${NC}"
 echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
 echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
 echo -e "             \033[0;33mContact Your Admin ${NC}"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 exit
 fi
 }
@@ -71,29 +71,47 @@ echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
 tput cnorm
 }
 sldns() {
-wget raw.githubusercontent.com/Dharmavpn/v/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
+wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 }
 res1() {
 wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+clear
+}
+res2() {
+wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/rmbl1.sh && chmod +x rmbl1.sh && ./rmbl1.sh
+clear
+}
+res3() {
+wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/rmbl2.sh && chmod +x rmbl2.sh && ./rmbl2.sh
+clear
+}
+res4() {
+wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/rmbl3.sh && chmod +x rmbl3.sh && ./rmbl3.sh
+clear
+}
+res5() {
+wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/rmbl4.sh && chmod +x rmbl4.sh && ./rmbl4.sh
+clear
 }
 clear
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│ ${WH}Please select a your Choice to Set Domain              ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│  [ 1 ]  ${WH}Domain kamu Sendri    ${NC}"
+echo -e "$COLOR1│"
 echo -e "$COLOR1│  [ 2 ]  ${WH}Domain Yang Punya Script     ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 until [[ $dns =~ ^[0-9]+$ ]]; do
 read -p "   Please select numbers 1-2 or Any Button(Random) : " dns
 done
 if [[ $dns == "1" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e  "$COLOR1│             ${WH}TERIMA KASIH                 $COLOR1│${NC}"
 echo -e  "$COLOR1│        ${WH}SUDAH MENGGUNAKAN SCRIPT          $COLOR1│${NC}"
-echo -e  "$COLOR1│               ${WH}DHARMA VPN               $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1│               ${WH}DARI SAYA                  $COLOR1│${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dnss =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan domain kamu Disini : " -e dnss
@@ -103,25 +121,33 @@ echo "$dnss" > /etc/xray/domain
 echo "$dnss" > /etc/v2ray/domain
 echo "IP=$dnss" > /var/lib/ipvps.conf
 read -n 1 -s -r -p "  Press any key to Back Menu"
-certv2ray
+menu
 clear
 elif [[ $dns == "2" ]]; then
 clear
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│ \033[1;37mPlease select a your Choice to Set Domain$COLOR1│${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│  [ 1 ]  \033[1;37mDomain xxx.airhitam.my.id       ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
-until [[ $domain2 =~ ^[1-2]+$ ]]; do
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1│  [ 1 ]  \033[1;37mDomain xxx.xnxxms.cloud       ${NC}"
+echo -e "$COLOR1│  "
+echo -e "$COLOR1│  [ 2 ]  \033[1;37mDomain xxx.adijaya.cloud     ${NC}"
+#echo -e "$COLOR1│  "
+#echo -e "$COLOR1│  [ 3 ]  \033[1;37mDomain xxx.adijayavvip.cloud ${NC}"
+#echo -e "$COLOR1│  "
+#echo -e "$COLOR1│  [ 4 ]  \033[1;37mDomain xxx.pirang.cloud     ${NC}"
+#echo -e "$COLOR1│  "
+#echo -e "$COLOR1│  [ 5 ]  \033[1;37mDomain xxx.berurat.cloud     ${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
+until [[ $domain2 =~ ^[1-5]+$ ]]; do
 read -p "   Please select numbers : " domain2
 done
 if [[ $domain2 == "1" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.airhitam.my.id     $COLOR1│${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.xnxxms.cloud       $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn1 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn1
@@ -133,15 +159,13 @@ sleep 1
 fun_bar 'res1'
 clear
 rm -rf /root/subdomainx
-certv2ray
-clear
 fi
 if [[ $domain2 == "2" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.berurat.cloud      $COLOR1│${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.adijaya.cloud      $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn2 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn2
@@ -156,10 +180,10 @@ rm -rf /root/subdomainx
 fi
 if [[ $domain2 == "3" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.xnxxms.cloud       $COLOR1│${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.adijayavvip.cloud  $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn3 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn3
@@ -174,10 +198,10 @@ rm -rf /root/subdomainx
 fi
 if [[ $domain2 == "4" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.slowapp.dev        $COLOR1│${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.pirang.cloud       $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn4 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn4
@@ -192,10 +216,10 @@ rm -rf /root/subdomainx
 fi
 if [[ $domain2 == "5" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.vpnvip.tech        $COLOR1│${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.berurat.cloud      $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn5 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn5
@@ -210,10 +234,10 @@ rm -rf /root/subdomainx
 fi
 if [[ $domain2 == "6" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.slowvip.tech        $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dn6 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan subdomain kamu Disini tanpa spasi : " -e dn6
@@ -239,11 +263,11 @@ menu
 clear
 elif [[ $dns == "4" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e  "$COLOR1│             ${WH}TERIMA KASIH                 $COLOR1│${NC}"
 echo -e  "$COLOR1│        ${WH}SUDAH MENGGUNAKAN SCRIPT          $COLOR1│${NC}"
-echo -e  "$COLOR1│               ${WH}DHARMA VPN                   $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1│               ${WH}RMBL VPN                   $COLOR1│${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dns1 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan domain kamu Disini : " -e dns1
@@ -253,11 +277,11 @@ echo "$dns1" > /etc/xray/domain
 echo "$dns1" > /etc/v2ray/domain
 echo "IP=$dns1" > /var/lib/ipvps.conf
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e  "$COLOR1│             ${WH}TERIMA KASIH                 $COLOR1│${NC}"
 echo -e  "$COLOR1│        ${WH}SUDAH MENGGUNAKAN SCRIPT          $COLOR1│${NC}"
-echo -e  "$COLOR1│               ${WH}DHARMA VPN                   $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1│               ${WH}RMBL VPN                   $COLOR1│${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dns2 =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan Domain SlowDNS kamu Disini : " -e dns2
@@ -268,11 +292,11 @@ menu
 clear
 elif [[ $dns == "5" ]]; then
 clear
-echo -e  "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e  "$COLOR1│             ${WH}TERIMA KASIH                 $COLOR1│${NC}"
 echo -e  "$COLOR1│        ${WH}SUDAH MENGGUNAKAN SCRIPT          $COLOR1│${NC}"
-echo -e  "$COLOR1│               ${WH}DHARMA VPN                   $COLOR1│${NC}"
-echo -e  "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e  "$COLOR1│               ${WH}RMBL VPN                   $COLOR1│${NC}"
+echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $dnscl =~ ^[a-zA-Z0-9_.-]+$ ]]; do
 read -rp "Masukan domain kamu Disini : " -e dnscl
@@ -685,16 +709,16 @@ menu
 }
 function m-bot2(){
 clear
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1  ${WH}Please select a Bot type below                 ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1  [ 1 ] ${WH}Buat/Edit BOT INFO Multi Login SSH, XRAY & TRANSAKSI   ${NC}"
 echo -e ""
 echo -e "$COLOR1  [ 2 ] ${WH}Buat/Edit BOT INFO Create User & Lain Lain    ${NC}"
 echo -e ""
 echo -e "$COLOR1  [ 3 ] ${WH}Buat/Edit BOT INFO Backup Telegram    ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 read -p "   Please select numbers 1-3 or Any Button(Random) to exit : " bot
 echo ""
 if [[ $bot == "1" ]]; then
@@ -899,14 +923,14 @@ cp -r /usr/local/bin/xray /usr/local/bin/offixray &> /dev/null
 fi
 clear
 echo -e " "
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│ ${WH}Please select a your Choice to Set CORE MENU           ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│  [ 1 ]  ${WH}XRAY CORE OFFICIAL       ${NC}"
 echo -e "$COLOR1│"
 echo -e "$COLOR1│  [ 2 ]  ${WH}XRAY CORE MOD DHARAK    ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 until [[ $core =~ ^[0-9]+$ ]]; do
 read -p "   Please select numbers 1-2 or Any Button(EXIT) : " core
 done
@@ -931,11 +955,12 @@ menu
 }
 function dobot(){
 clear
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│ ${WH}Please select a your Choice to Set           ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│  [ 1 ]  ${WH}INSTAL BOT CRATE AKUN DIGITAL OCEAN      ${NC}"
+echo -e "$COLOR1│"
 echo -e "$COLOR1│  [ 2 ]  ${WH}COPY BOT CREATE AKUN DIGITAL OCEAN   ${NC}"
 if [[ -e /etc/cron.d/bantwidth ]]; then
 echo -ne
@@ -943,7 +968,7 @@ else
 echo -e "$COLOR1│"
 echo -e "$COLOR1│  [ 3 ]  ${WH}SET BANTWIDTH BUAT JUALAN DIGITAL OCEAN${NC}"
 fi
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 until [[ $dobot =~ ^[0-9]+$ ]]; do
 read -p "   Please select numbers 1-3 or Any Button(BACK) : " dobot
 done
