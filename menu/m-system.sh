@@ -9,7 +9,7 @@ WH='\033[1;37m'
 ipsaya=$(wget -qO- ifconfig.me)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -71,10 +71,10 @@ echo -e "\033[0;33m]\033[1;37m -\033[1;32m Succes !\033[1;37m"
 tput cnorm
 }
 sldns() {
-wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
+wget https://raw.githubusercontent.com/Dharmavpn/vip/main/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
 }
 res1() {
-wget https://raw.githubusercontent.com/VIP-VPN/vip/main/slowdns/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
+wget https://raw.githubusercontent.com/Dharmavpn/vip/main/slowdns/rmbl.sh && chmod +x rmbl.sh && ./rmbl.sh
 clear
 }
 res2() {
@@ -129,15 +129,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│ \033[1;37mPlease select a your Choice to Set Domain$COLOR1│${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│  [ 1 ]  \033[1;37mDomain xxx.xnxxms.cloud       ${NC}"
-echo -e "$COLOR1│  "
-echo -e "$COLOR1│  [ 2 ]  \033[1;37mDomain xxx.adijaya.cloud     ${NC}"
-#echo -e "$COLOR1│  "
-#echo -e "$COLOR1│  [ 3 ]  \033[1;37mDomain xxx.adijayavvip.cloud ${NC}"
-#echo -e "$COLOR1│  "
-#echo -e "$COLOR1│  [ 4 ]  \033[1;37mDomain xxx.pirang.cloud     ${NC}"
-#echo -e "$COLOR1│  "
-#echo -e "$COLOR1│  [ 5 ]  \033[1;37mDomain xxx.berurat.cloud     ${NC}"
+echo -e "$COLOR1│  [ 1 ]  \033[1;37mDomain xxx.airhitam.my.id       ${NC}"
 echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 until [[ $domain2 =~ ^[1-5]+$ ]]; do
 read -p "   Please select numbers : " domain2
@@ -145,7 +137,7 @@ done
 if [[ $domain2 == "1" ]]; then
 clear
 echo -e  "$COLOR1┌──────────────────────────────────────────┐${NC}"
-echo -e  "$COLOR1│  \033[1;37mContoh subdomain xxx.xnxxms.cloud       $COLOR1│${NC}"
+echo -e  "$COLOR1│  \033[1;37mContoh subdomain airhitam.my.id         $COLOR1│${NC}"
 echo -e  "$COLOR1│    \033[1;37mxxx jadi subdomain kamu               $COLOR1│${NC}"
 echo -e  "$COLOR1└──────────────────────────────────────────┘${NC}"
 echo " "
