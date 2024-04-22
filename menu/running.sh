@@ -18,7 +18,7 @@ CITY=$(curl -s ipinfo.io/city )
 ipsaya=$(curl -s -4 icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/Dharmabre/Izinsc/main/Ip"
+data_ip="https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -32,7 +32,7 @@ checking_sc() {
         echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
         echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
         echo -e "             \033[0;33mContact Admin :${NC}"
-        echo -e "     \033[0;36mTelegram${NC}: https://t.me/abecasdee"
+        echo -e "     \033[0;36mTelegram${NC}: https://t.me/ab"
         echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
         exit
     fi
@@ -45,7 +45,7 @@ if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
 rm -f /home/needupdate > /dev/null 2>&1
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/Dharmabre/Izinsc/main/Ip | grep $MYIP | awk '{print $3}')
+Exp=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $3}')
 fi
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
@@ -309,7 +309,7 @@ datediff() {
 mai="datediff "$Exp" "$DATE""
 
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp2=$(curl -sS https://raw.githubusercontent.com/Dharmabre/Izinsc/main/Ip | grep $MYIP | awk '{print $3}')
+Exp2=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $3}')
 
 # CERTIFICATE STATUS
 d1=$(date -d "$Exp2" +%s)
@@ -318,7 +318,7 @@ certificate=$(( (d1 - d2) / 86400 ))
 
 # DNS PATCH
 #tipeos2=$(uname -m)
-Name2=$(curl -sS https://raw.githubusercontent.com/Dharmabre/Izinsc/main/Ip | grep $MYIP | awk '{print $2}')
+Name2=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
 
@@ -412,8 +412,6 @@ echo -e "$COLOR1 $NC  ${WH}❈ SSH / TUN               ${COLOR1}: ${WH}$status_s
 echo -e "$COLOR1 $NC  ${WH}❈ OpenVPN                 ${COLOR1}: ${WH}$status_openvpn${NC}"
 echo -e "$COLOR1 $NC  ${WH}❈ Dropbear                ${COLOR1}: ${WH}$status_beruangjatuh${NC}"
 echo -e "$COLOR1 $NC  ${WH}❈ Stunnel4                ${COLOR1}: ${WH}$status_stunnel${NC}"
-#echo -e "❈ Squid                   :$status_squid"
-#echo -e "$COLOR1 $NC  ${WH}❈ Fail2Ban                ${COLOR1}: ${WH}$status_fail2ban${NC}"
 echo -e "$COLOR1 $NC  ${WH}❈ Crons                   ${COLOR1}: ${WH}$status_cron${NC}"
 echo -e "$COLOR1 $NC  ${WH}❈ Vnstat                  ${COLOR1}: ${WH}$status_vnstat${NC}"
 echo -e "$COLOR1 $NC  ${WH}❈ XRAYS Vmess TLS         ${COLOR1}: ${WH}$status_tls_v2ray${NC}"
@@ -429,7 +427,6 @@ echo -e "$COLOR1 $NC  ${WH}❈ NoobzVPNS               ${COLOR1}: ${WH}$noobz${N
 echo -e "$COLOR1 $NC  ${WH}❈ SSH UDP COSTUM          ${COLOR1}: ${WH}$udp${NC}"
 echo -e "$COLOR1 $NC  ${WH}❈ SlowDNS CLIENT          ${COLOR1}: ${WH}$slc${NC}"
 echo -e "$COLOR1 $NC  ${WH}❈ SlowDNS SERVER          ${COLOR1}: ${WH}$sls${NC}"
-#echo -e "🔱 SSL / SSH Multiplexer   :$sosslh"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
 #echo -e " $COLOR1 $NC                                              ${NC} $COLOR1 $NC"
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
