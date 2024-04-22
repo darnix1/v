@@ -1,7 +1,7 @@
 #!/bin/bash
-rm trial*
-cd
-echo 1 > /proc/sys/vm/drop_caches
+
+
+##----- Auto Remove SSH
 data=( `cat /etc/xray/ssh | grep '^###' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -12,15 +12,17 @@ d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" -le "0" ]]; then
-sed -i "/^### $user $exp $pass/d" /etc/xray/ssh
+sed -i "/^### $user $exp $Pass/d" /etc/xray/ssh
 if getent passwd $user > /dev/null 2>&1; then
-userdel $user > /dev/null 2>&1
+        userdel $user > /dev/null 2>&1
 fi
 rm /home/vps/public_html/ssh-$user.txt >/dev/null 2>&1
 rm /etc/xray/sshx/${user}IP >/dev/null 2>&1
 rm /etc/xray/sshx/${user}login >/dev/null 2>&1
 fi
 done
+
+##----- Auto Remove Vmess
 data=( `cat /etc/xray/config.json | grep '^#vmg' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -44,12 +46,14 @@ rm /etc/vmess/${user}IP >/dev/null 2>&1
 rm /etc/vmess/${user}login >/dev/null 2>&1
 fi
 done
-data=( `cat /etc/xray/config.json | grep '^#vlg' | cut -d ' ' -f 2 | sort | uniq`);
+
+#----- Auto Remove Vless
+data=( `cat /etc/xray/config.json | grep '^#vl' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#vlg $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-uuid=$(grep -w "^#vlg $user" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
+exp=$(grep -w "^#vl $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -w "^#vl $user" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
@@ -66,12 +70,14 @@ rm /etc/vless/${user}IP >/dev/null 2>&1
 rm /etc/vless/${user}login >/dev/null 2>&1
 fi
 done
-data=( `cat /etc/xray/config.json | grep '^#trg' | cut -d ' ' -f 2 | sort | uniq`);
+
+#----- Auto Remove Trojan
+data=( `cat /etc/xray/config.json | grep '^#tr' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#trg $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
-uuid=$(grep -w "^#trg $user" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
+exp=$(grep -w "^#tr $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+uuid=$(grep -w "^#tr $user" "/etc/xray/config.json" | cut -d ' ' -f 4 | sort | uniq)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
@@ -89,6 +95,8 @@ rm /etc/trojan/${user}login >/dev/null 2>&1
 fi
 done
 systemctl restart xray
+
+#----- Auto Remove SHADOWSOCK GRPC
 data=( `cat /etc/xray/config.json | grep '^#ssg' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -103,6 +111,8 @@ sed -i "/^#ssg $user $exp/,/^},{/d" /etc/xray/config.json
 fi
 done
 systemctl restart xray
+
+#----- Auto Remove SHADOWSOCK
 data=( `cat /etc/xray/config.json | grep '^#ss' | cut -d ' ' -f 2 | sort | uniq`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -117,6 +127,9 @@ sed -i "/^#ss $user $exp/,/^},{/d" /etc/xray/config.json
 fi
 done
 systemctl restart xray
+
+
+##------ Auto Remove SSH
 hariini=`date +%d-%m-%Y`
 cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
 totalaccounts=`cat /tmp/expirelist.txt | wc -l`
