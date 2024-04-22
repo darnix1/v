@@ -7,7 +7,7 @@ WH='\033[1;37m'
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -30,8 +30,8 @@ checking_sc
 cd
 rm -rf /root/rmbl >/dev/null 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-listuser=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-superadmin=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $7}')
+listuser=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+superadmin=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $7}')
 uu=$(curl -sS https://pastebin.com/raw/BZ9Fcnqf)
 
 APIGIT=$(cat /etc/github/api)
@@ -41,7 +41,7 @@ author=$(cat /etc/profil)
 
 function tambahip2(){
 author=$(cat /etc/profil)
-superadmin=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $7}')
+superadmin=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $7}')
 if [ "$superadmin" = "VIP" ]; then
 tambahip
 else
@@ -61,7 +61,7 @@ fi
 }
 function gantiip2(){
 author=$(cat /etc/profil)
-superadmin=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $7}')
+superadmin=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $7}')
 if [ "$superadmin" = "VIP" ]; then
 mkdir /root/rmbl
 cd /root/rmbl/ &> /dev/null
@@ -106,13 +106,13 @@ fi
 }
 function add_ip(){
 clear
-nama2=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+nama2=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 author=$(cat /etc/profil)
 TIMES="10"
 CHATID=$(cat /etc/per/id)
 KEY=$(cat /etc/per/token)
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-superadmin=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $7}')
+superadmin=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $7}')
 
 echo -e "$RED┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$RED ${NC} ${RED}               ${WH}• REGISTER IPVPS •              ${NC} $RED $NC"
