@@ -80,7 +80,7 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 rm -rf /etc/github
 mkdir /etc/github
 curl -s https://pastebin.com/raw/t3aaqcej > /etc/github/api
-curl -s https://pastebin.com/raw/cfivDKk2 > /etc/github/email
+curl -s https://pastebin.com/raw/3ZbB5r7m > /etc/github/email
 curl -s https://pastebin.com/raw/bSskAgjw > /etc/github/username
 clear
 APIGIT=$(cat /etc/github/api)
