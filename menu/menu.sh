@@ -68,17 +68,17 @@ U4=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini
 U5=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $5}')
 U6=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $6}')
 MYIP=$(curl -sS ipv4.icanhazip.com)
-web=$(curl -sS  http://rmb.vip.app/ress | grep $kode | awk '{print $3}')
-web2=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $2}')
-web3=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $4}')
-web4=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $5}')
-web5=$(curl -sS http://rmb.vip.app/ress | grep $kode | awk '{print $6}')
-userscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $1}')
-emailscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $2}')
-tokenscript=$(curl -sS https://pastebin.com/raw/YZFr8JDy | awk '{print $3}')
-userkey=$(curl -sS https://pastebin.com/raw/unGxyHYK | awk '{print $1}')
-emailkey=$(curl -sS https://pastebin.com/raw/unGxyHYK | awk '{print $2}')
-tokenkey=$(curl -sS https://pastebin.com/raw/unGxyHYK | awk '{print $3}')
+web=$(curl -sS  http://rmbl-vpn.my.id/resss | grep $kode | awk '{print $3}')
+web2=$(curl -sS http://rmbl-vpn.my.id/resss | grep $kode | awk '{print $2}')
+web3=$(curl -sS http://rmbl-vpn.my.id/resss | grep $kode | awk '{print $4}')
+web4=$(curl -sS http://rmbl-vpn.my.id/resss | grep $kode | awk '{print $5}')
+web5=$(curl -sS http://rmbl-vpn.my.id/resss | grep $kode | awk '{print $6}')
+userscript=$(curl -sS https://pastebin.com/raw/m7wz4DbR | awk '{print $1}')
+emailscript=$(curl -sS https://pastebin.com/raw/m7wz4DbR | awk '{print $2}')
+tokenscript=$(curl -sS https://pastebin.com/raw/m7wz4DbR | awk '{print $3}')
+userkey=$(curl -sS https://pastebin.com/raw/m7wz4DbR | awk '{print $1}')
+emailkey=$(curl -sS https://pastebin.com/raw/m7wz4DbR | awk '{print $2}')
+tokenkey=$(curl -sS https://pastebin.com/raw/m7wz4DbR | awk '{print $3}')
 if [[ $kode == $web ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
 hhari=$(date -d "$web3 days" +"%Y-%m-%d")
@@ -107,8 +107,8 @@ elif [[ $kode == $Key ]]; then
 MYIP=$(curl -sS ipv4.icanhazip.com)
 author4=$(cat /etc/profil)
 hhari=$(date -d "$KEY2 days" +"%Y-%m-%d")
-mkdir /root/casper
-cd /root/casper
+mkdir /root/rmbl
+cd /root/rmbl
 wget https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini >/dev/null 2>&1
 if [ "$U4" = "$MYIP" ]; then
 sed -i "s/### $U2 $U3 $U4 $U5/### $U2 $hhari $U4 $U5/g" /root/rmbl/ipmini
