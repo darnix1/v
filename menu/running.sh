@@ -11,6 +11,28 @@ tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
+ipsaya=$(wget -qO- ipinfo.io/ip)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+data_ip="https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini"
+checking_sc() {
+useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
+if [[ $date_list < $useexp ]]; then
+echo -ne
+else
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1│${NC}${COLBG1}          ${WH}• AUTOSCRIPT PREMIUM •                 ${NC}$COLOR1│ $NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1│            ${RED}PERMISSION DENIED !${NC}                  $COLOR1│"
+echo -e "$COLOR1│   ${yl}Your VPS${NC} $ipsaya \033[0;36mHas been Banned${NC}      $COLOR1│"
+echo -e "$COLOR1│     ${yl}Buy access permissions for scripts${NC}          $COLOR1│"
+echo -e "$COLOR1│             \033[0;32mContact Your Admin ${NC}                 $COLOR1│"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+exit
+fi
+}
+checking_sc
 MYIP=$(curl -sS ipv4.icanhazip.com)
 if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
@@ -163,11 +185,11 @@ echo -e "$COLOR1 $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
 }
 mai="datediff "$Exp" "$DATE""
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp2=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+Exp2=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $3}')
 d1=$(date -d "$Exp2" +%s)
 d2=$(date -d "$today" +%s)
 certificate=$(( (d1 - d2) / 86400 ))
-Name2=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+Name2=$(curl -sS https://raw.githubusercontent.com/RMBL-VIP/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 Domen="$(cat /etc/xray/domain)"
 function restartservice(){
 clear
@@ -375,46 +397,46 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1 ${NC}                ${WH}⇱ SYSTEM INFORMATION ⇲${NC}                       $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Hostname    ${COLOR1}: ${WH}$HOSTNAME$NC"
-echo -e "$COLOR1 $NC  ${WH}♦ OS Name     ${COLOR1}: ${WH}$Tipe$NC"
-echo -e "$COLOR1 $NC  ${WH}♦ Total RAM   ${COLOR1}: ${WH}${totalram}MB$NC"
-echo -e "$COLOR1 $NC  ${WH}♦ Public IP   ${COLOR1}: ${WH}$MYIP$NC"
-echo -e "$COLOR1 $NC  ${WH}♦ Domain      ${COLOR1}: ${WH}$Domen$NC"
+echo -e "$COLOR1 $NC  ${WH}🔥 Hostname    ${COLOR1}: ${WH}$HOSTNAME$NC"
+echo -e "$COLOR1 $NC  ${WH}🔥 OS Name     ${COLOR1}: ${WH}$Tipe$NC"
+echo -e "$COLOR1 $NC  ${WH}🔥 Total RAM   ${COLOR1}: ${WH}${totalram}MB$NC"
+echo -e "$COLOR1 $NC  ${WH}🔥 Public IP   ${COLOR1}: ${WH}$MYIP$NC"
+echo -e "$COLOR1 $NC  ${WH}🔥 Domain      ${COLOR1}: ${WH}$Domen$NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}⇱ SUBSCRIPTION INFORMATION ⇲${NC}                $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Client Name ${COLOR1}: ${WH}$Name2${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ License     ${COLOR1}: ${WH}$certificate days${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Version     ${COLOR1}: ${WH}Last Version${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Client Name ${COLOR1}: ${WH}$Name2${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 License     ${COLOR1}: ${WH}$certificate days${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Version     ${COLOR1}: ${WH}Last Version${NC}"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 ${NC}                ${WH}⇱ SERVICE INFORMATION ⇲${NC}                 $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ SSH / TUN               ${COLOR1}: ${WH}$status_ssh${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ OpenVPN                 ${COLOR1}: ${WH}$status_openvpn${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Dropbear                ${COLOR1}: ${WH}$status_beruangjatuh${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Stunnel4                ${COLOR1}: ${WH}$status_stunnel${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Crons                   ${COLOR1}: ${WH}$status_cron${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Vnstat                  ${COLOR1}: ${WH}$status_vnstat${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ XRAYS Vmess TLS         ${COLOR1}: ${WH}$status_tls_v2ray${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ XRAYS Vmess None TLS    ${COLOR1}: ${WH}$status_nontls_v2ray${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ XRAYS Vless TLS         ${COLOR1}: ${WH}$status_tls_vless${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ XRAYS Vless None TLS    ${COLOR1}: ${WH}$status_nontls_vless${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ XRAYS Trojan            ${COLOR1}: ${WH}$status_virus_trojan${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Shadowsocks             ${COLOR1}: ${WH}$status_shadowsocks${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Websocket TLS           ${COLOR1}: ${WH}$swstls${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Websocket None TLS      ${COLOR1}: ${WH}$swstls${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ Websocket None TLS      ${COLOR1}: ${WH}$swstls${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ SSH UDP COSTUM          ${COLOR1}: ${WH}$udp${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ SlowDNS CLIENT          ${COLOR1}: ${WH}$slc${NC}"
-echo -e "$COLOR1 $NC  ${WH}♦ SlowDNS SERVER          ${COLOR1}: ${WH}$sls${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 SSH / TUN               ${COLOR1}: ${WH}$status_ssh${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 OpenVPN                 ${COLOR1}: ${WH}$status_openvpn${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Dropbear                ${COLOR1}: ${WH}$status_beruangjatuh${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Stunnel4                ${COLOR1}: ${WH}$status_stunnel${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Crons                   ${COLOR1}: ${WH}$status_cron${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Vnstat                  ${COLOR1}: ${WH}$status_vnstat${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 XRAYS Vmess TLS         ${COLOR1}: ${WH}$status_tls_v2ray${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 XRAYS Vmess None TLS    ${COLOR1}: ${WH}$status_nontls_v2ray${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 XRAYS Vless TLS         ${COLOR1}: ${WH}$status_tls_vless${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 XRAYS Vless None TLS    ${COLOR1}: ${WH}$status_nontls_vless${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 XRAYS Trojan            ${COLOR1}: ${WH}$status_virus_trojan${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Shadowsocks             ${COLOR1}: ${WH}$status_shadowsocks${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Websocket TLS           ${COLOR1}: ${WH}$swstls${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Websocket None TLS      ${COLOR1}: ${WH}$swstls${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 Websocket None TLS      ${COLOR1}: ${WH}$swstls${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 SSH UDP COSTUM          ${COLOR1}: ${WH}$udp${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 SlowDNS CLIENT          ${COLOR1}: ${WH}$slc${NC}"
+echo -e "$COLOR1 $NC  ${WH}🔥 SlowDNS SERVER          ${COLOR1}: ${WH}$sls${NC}"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC}                ${WH}♦ SCRIPT ♦ ${NC}                    $COLOR1 $NC"
-echo -e "$COLOR1 ${NC}                ${WH}♦ PREMIUM ♦ ${NC}                   $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}🔥 SCRIPT 🔥 ${NC}                    $COLOR1 $NC"
+echo -e "$COLOR1 ${NC}                ${WH}🔥 PREMIUM 🔥 ${NC}                   $COLOR1 $NC"
 echo -e "$COLOR1└───────────────────────────────────────────────────┘${NC}"
 read -n 1 -s -r -p "Press any key to Enter Menu Service"
-menu
+menuservice
