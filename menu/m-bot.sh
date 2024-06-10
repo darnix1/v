@@ -1,4 +1,5 @@
 #!/bin/bash
+[[ -e /bin/xdarnix/msg ]] && source /bin/xdarnix/msg || source <(curl -sSL https://gitea.com/xdarnix/msg/raw/branch/main/msg)
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
@@ -23,25 +24,73 @@ checking_sc() {
 }
 checking_sc
 
+
+
+
 domain=$(cat /etc/xray/domain)
 #color
 grenbo="\e[92;1m"
 NC='\e[0m'
 WH='\033[1;37m'
 #install
+restart-bot(){
+clear
+fun_bar() {
+    CMD[0]="$1"
+    CMD[1]="$2"
+    (
+        [[ -e $HOME/fim ]] && rm $HOME/fim
+        ${CMD[0]} -y >/dev/null 2>&1
+        ${CMD[1]} -y >/dev/null 2>&1
+        touch $HOME/fim
+    ) >/dev/null 2>&1 &
+    tput civis
+    echo -ne "  \033[0;33mEspere... \033[1;37m- \033[0;33m["
+    while true; do
+        for ((i = 0; i < 18; i++)); do
+            echo -ne "\033[0;32m#"
+            sleep 0.1s
+        done
+        [[ -e $HOME/fim ]] && rm $HOME/fim && break
+        echo -e "\033[0;33m]"
+        sleep 1s
+        tput cuu1
+        tput dl1
+        echo -ne "  \033[0;33mEspere... \033[1;37m- \033[0;33m["
+    done
+    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+    tput cnorm
+}
+res1() {
+    systemctl restart kyt
+}
+netfilter-persistent
+clear
+msg -bar
+echo -e " \e[1;97;101m        REINICIANDO BOT MANGER          \e[0m"
+msg -bar
+echo -e ""
+echo -e "  \033[1;91m Bot Reiniciado\033[1;37m"
+fun_bar 'res1'
+msg -bar
+echo -e ""
+read -n 1 -s -r -p "Presiona [ Enter ] para ir al menu"
+m-bot.sh
+}
+
 function install-bot(){
 apt update -y && apt upgrade -y
 apt install python3 python3-pip git speedtest-cli -y
 sudo apt-get install -y p7zip-full
 cd /usr/bin
 clear
-wget https://raw.githubusercontent.com/Dharmavpn/v/main/bot/bot.zip
+wget https://raw.githubusercontent.com/darnix1/vip/main/menu/bot.zip
 unzip bot.zip
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
-wget https://raw.githubusercontent.com/Dharmavpn/v/main/bot/kyt.zip
+wget https://raw.githubusercontent.com/darnix1/vip/main/menu/kyt.zip
 unzip kyt.zip
 pip3 install -r kyt/requirements.txt
 clear
@@ -54,20 +103,22 @@ cd
 rm -rf /etc/tele
 
 clear
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• BOT PANEL •                  ${NC} $COLOR1 $NC"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "${grenbo}Tutorial Creat Bot and ID Telegram${NC}"
-echo -e "${grenbo}[*] Creat Bot and Token Bot : @BotFather${NC}"
-echo -e "${grenbo}[*] Info Id Telegram : @MissRose_bot , perintah /info${NC}"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+msg -bar
+msg -tit
+msg -bar
+print_center " PANEL DE CONTROL BOT TELEGRAM"
+msg -bar
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "${grenbo}Tutorial Crear Bot and ID Telegram${NC}"
+echo -e "${grenbo}[*] Crear Bot y Token Bot : @BotFather${NC}"
+echo -e "${grenbo}[*] Info Id Telegram : @MissRose_bot , dominio /info${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 rm -rf /usr/bin/ddsdswl.session
 rm -rf /usr/bin/kyt/var.txt
 rm -rf /usr/bin/kyt/database.db
 echo -e ""
-read -e -p "[*] Input your Bot Token : " bottoken
-read -e -p "[*] Input Your Id Telegram :" admin
+read -e -p "[*] Ingrese su token de bot : " bottoken
+read -e -p "[*] Ingrese su ID Telegram :" admin
 
 cat >/usr/bin/kyt/var.txt <<EOF
 BOT_TOKEN="$bottoken"
@@ -129,8 +180,8 @@ systemctl start kyt &> /dev/null
 systemctl restart kyt &> /dev/null
 
 echo "Done"
-echo " Installations complete, type /menu on your bot"
-read -n 1 -s -r -p "Press any key to back on menu"
+echo " Instalaciones completas, escribe /start en tu bot"
+read -n 1 -s -r -p "Presione cualquier tecla para regresar al menú"
 menu
 }
 cd
@@ -141,36 +192,46 @@ install-bot
 fi
 
 #isi data
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│ \033[1;37mPlease select a your Choice              $COLOR1│${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│  [ 1 ]  \033[1;37mGANTI BOT       ${NC}"
-echo -e "$COLOR1│  [ 2 ]  \033[1;37mUPDATE BOT     ${NC}"
-echo -e "$COLOR1│  [ 3 ]  \033[1;37mDELETE BOT     ${NC}"
-echo -e "$COLOR1│  [ 4 ]  \033[1;37mGANTI NAMA PANGGILAN BOT (MULTI SERVER)     ${NC}"
-echo -e "$COLOR1│  [ 5 ]  \033[1;37mTAMBAH ADMIN     ${NC}"
-echo -e "$COLOR1╰══════════════════════════════════════════╯${NC}"
+clear
+msg -bar
+msg -tit
+msg -bar
+print_center " PANEL DE CONTROL BOT TELEGRAM"
+msg -bar
+echo -e "$COLOR1┌──────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1│  [ 1 ]  \033[1;37mCAMBIAR LA BOT       ${NC}"
+echo -e "$COLOR1│  "                                        
+echo -e "$COLOR1│  [ 2 ]  \033[1;37mACTUALIZAR BOT     ${NC}"
+echo -e "$COLOR1│  "                                        
+echo -e "$COLOR1│  [ 3 ]  \033[1;37mELIMINAR BOT     ${NC}"
+echo -e "$COLOR1│  "                                        
+echo -e "$COLOR1│  [ 4 ]  \033[1;37mCAMBIAR NOMBRE DE LLAMADA DEL BOT (SERVIDOR MÚLTIPLE)     ${NC}"
+echo -e "$COLOR1│  "                                        
+echo -e "$COLOR1│  [ 5 ]  \033[1;37mAÑADIR ADMINISTRADOR     ${NC}"
+echo -e "$COLOR1│  "                                        
+echo -e "$COLOR1└──────────────────────────────────────────┘${NC}"
 until [[ $domain2 =~ ^[1-5]+$ ]]; do 
-read -p "   Please select numbers 1 sampai 5 : " domain2
+read -p "   Por favor seleccione los números 1 al 5 : " domain2
 done
 
 if [[ $domain2 == "1" ]]; then
 clear
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• BOT PANEL •                  ${NC} $COLOR1 $NC"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+msg -bar
+msg -tit
+msg -bar
+print_center " PANEL DE CONTROL BOT TELEGRAM"
+msg -bar
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "${grenbo}Tutorial Creat Bot and ID Telegram${NC}"
-echo -e "${grenbo}[*] Creat Bot and Token Bot : @BotFather${NC}"
+echo -e "${grenbo}[*] Crear Bot and Token Bot : @BotFather${NC}"
 echo -e "${grenbo}[*] Info Id Telegram : @MissRose_bot , perintah /info${NC}"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 rm -rf /usr/bin/ddsdswl.session
 rm -rf /usr/bin/kyt/var.txt
 rm -rf /usr/bin/kyt/database.db
 echo -e ""
-read -e -p "[*] Input your Bot Token : " bottoken
-read -e -p "[*] Input Your Id Telegram :" admin
+read -e -p "[*] Ingrese su token de bot : " bottoken
+read -e -p "[*] Ingrese su Id Telegram :" admin
 
 cat >/usr/bin/kyt/var.txt <<EOF
 BOT_TOKEN="$bottoken"
@@ -203,8 +264,8 @@ systemctl start kyt &> /dev/null
 systemctl restart kyt &> /dev/null
 
 echo "Done"
-echo " Installations complete, type /menu on your bot"
-read -n 1 -s -r -p "Press any key to back on menu"
+echo " Instalaciones completas, escribe /menu en tu bot"
+read -n 1 -s -r -p "Presione cualquier tecla para regresar al menú"
 menu
 fi
 if [[ $domain2 == "2" ]]; then
@@ -214,13 +275,13 @@ rm -rf /usr/bin/kyt.zip
 rm -rf /usr/bin/kyt
 sleep 2
 cd /usr/bin
-wget https://raw.githubusercontent.com/sukaratarmb/Izin/main/bot/bot.zip
+wget https://raw.githubusercontent.com/darnix1/vip/main/menu/bot.zip
 unzip bot.zip
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
-wget https://raw.githubusercontent.com/sukaratarmb/Izin/main/bot/kyt.zip
+wget https://raw.githubusercontent.com/darnix1/vip/main/menu/kyt.zip
 unzip kyt.zip
 pip3 install -r kyt/requirements.txt
 clear
@@ -239,30 +300,32 @@ systemctl enable kyt &> /dev/null
 systemctl start kyt &> /dev/null
 systemctl restart kyt &> /dev/null
 clear
-echo -e "Succes Update BOT Telegram"
-read -n 1 -s -r -p "Press any key to back on menu"
+echo -e "Actualización exitosa de BOT Telegram"
+read -n 1 -s -r -p "Presione cualquier tecla para regresar al menú"
 menu
 fi
 
 if [[ $domain2 == "3" ]]; then
 clear
 rm -rf /usr/bin/kyt
-echo -e "Succes Delete BOT Telegram"
-read -n 1 -s -r -p "Press any key to back on menu"
+echo -e "Eliminación exitosa de BOT Telegram"
+read -n 1 -s -r -p "Presione cualquier tecla para regresar al menú"
 menu
 fi
 
 if [[ $domain2 == "4" ]]; then
 clear
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• BOT PANEL •                  ${NC} $COLOR1 $NC"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "${grenbo}Ini digunakan jika Mau memakai 1bot saja tanpa perlu ${NC}"
-echo -e "${grenbo}memakai banyak bot create ini digunakan untuk create akun ${NC}"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+msg -bar
+msg -tit
+msg -bar
+print_center " PANEL DE CONTROL BOT TELEGRAM"
+msg -bar
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "${grenbo}Esto se usa si quieres usar solo 1 bot sin necesitarlo. ${NC}"
+echo -e "${grenbo}Muchos de estos bots de creación se utilizan para crear cuentas. ${NC}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e ""
-read -e -p "[*] Input Nama Panggilan Botnya : " namabot
+read -e -p "[*] Ingrese el apodo del bot : " namabot
 
 sed -i "s/77/${namabot}/g" /usr/bin/kyt/modules/menu.py
 sed -i "s/77/${namabot}/g" /usr/bin/kyt/modules/start.py
@@ -295,22 +358,24 @@ sed -i "s/"menu"/"${namabot}"/g" /usr/bin/kyt/modules/ssh.py
 sed -i "s/"menu"/"${namabot}"/g" /usr/bin/kyt/modules/menu.py
 
 clear
-echo -e "Succes Ganti Nama Panggilan BOT Telegram"
-echo -e "Kalau Mau Panggil Menu botnya Ketik .${namabot} atau /${namabot}"
-echo -e "Kalau Mau Panggil Start botnya Ketik .start${namabot} atau /start${namabot}"
+echo -e "Éxito al cambiar el apodo del BOT de Telegram"
+echo -e "Si desea llamar al menú del bot, toque .${namabot} atau /${namabot}"
+echo -e "Si desea llamar al bot de inicio, escriba .start${namabot} atau /start${namabot}"
 systemctl restart kyt
-read -n 1 -s -r -p "Press any key to back on menu"
+read -n 1 -s -r -p "Presione cualquier tecla para regresar al menú"
 menu
 fi
 
 
 if [[ $domain2 == "5" ]]; then
 clear
-echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1 ${NC} ${COLBG1}                ${WH}• BOT PANEL •                  ${NC} $COLOR1 $NC"
-echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+msg -bar
+msg -tit
+msg -bar
+print_center " PANEL DE CONTROL BOT TELEGRAM"
+msg -bar
 echo -e ""
-read -e -p "[*] Input ID Usernya : " user
+read -e -p "[*] Ingrese el usuario ejemplo @darnix0 : " user
 userke=$(cat /usr/bin/kyt/var.txt | wc -l)
 sed -i '/(ADMIN,))/a hello	c.execute("INSERT INTO admin (user_id) VALUES (?)",(USER'""$userke""',))' /usr/bin/kyt/__init__.py
 cat >>/usr/bin/kyt/var.txt <<EOF
@@ -324,6 +389,6 @@ echo -e "Succes TAMBAH Admin BOT Telegram"
 rm -rf /usr/bin/ddsdswl.session
 rm -rf /usr/bin/kyt/database.db
 systemctl restart kyt 
-read -n 1 -s -r -p "Press any key to back on menu"
+read -n 1 -s -r -p "Presione cualquier tecla para regresar al menú"
 menu
 fi
