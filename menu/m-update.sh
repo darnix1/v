@@ -107,36 +107,36 @@ fun_bar() {
 }
 res1() {
     
-wget -O /usr/bin/menu "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/menu.sh" && chmod +x /usr/bin/menu
-wget -O /usr/bin/m-vmess "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-vmess.sh" && chmod +x /usr/bin/m-vmess
-wget -O /usr/bin/m-vless "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-vless.sh" && chmod +x /usr/bin/m-vless
-wget -O /usr/bin/m-trojan "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-trojan.sh" && chmod +x /usr/bin/m-trojan
-wget -O /usr/bin/m-system "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-system.sh" && chmod +x /usr/bin/m-system
-wget -O /usr/bin/m-sshovpn "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-sshovpn.sh" && chmod +x /usr/bin/m-sshovpn
-wget -O /usr/bin/m-ssws "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
-wget -O /usr/bin/running "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/running.sh" && chmod +x /usr/bin/running
-wget -O /usr/bin/m-update "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-update.sh" && chmod +x /usr/bin/m-update
-wget -O /usr/bin/m-backup "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-backup.sh" && chmod +x /usr/bin/m-backup
-wget -O /usr/bin/m-theme "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-theme.sh" && chmod +x /usr/bin/m-theme
-wget -O /usr/bin/m-ip "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
-wget -O /usr/bin/m-bot "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-bot.sh" && chmod +x /usr/bin/m-bot
-wget -O /usr/bin/update "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/update.sh" && chmod +x /usr/bin/update
-wget -O /usr/bin/ws-dropbear "https://raw.githubusercontent.com/Dharmavpn/v/main/sshws/ws-dropbear" && chmod +x /usr/bin/ws-dropbear
-wget -O /usr/bin/bckpbot "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/bckpbot.sh" && chmod +x /usr/bin/bckpbot
-wget -O /usr/bin/tendang "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/tendang.sh" && chmod +x /usr/bin/tendang
-wget -O /usr/bin/bottelegram "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/bottelegram.sh" && chmod +x /usr/bin/bottelegram
-wget -O /usr/bin/backup "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/backup.sh" && chmod +x /usr/bin/backup
-wget -O /usr/bin/restore "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/restore.sh" && chmod +x /usr/bin/restore
-wget -O /usr/bin/cleaner "https://raw.githubusercontent.com/Dharmavpn/v/main/install/cleaner.sh" && chmod +x /usr/bin/cleaner
-wget -O /usr/bin/m-allxray "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/m-allxray.sh" && chmod +x /usr/bin/m-allxray
-wget -O /usr/bin/xraylimit "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/xraylimit.sh" && chmod +x /usr/bin/xraylimit
-wget -O /usr/bin/xp "https://raw.githubusercontent.com/Dharmavpn/v/main/install/xp.sh" && chmod +x /usr/bin/xp
-wget -O /usr/bin/trialvmess "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/trialvmess.sh" && chmod +x /usr/bin/trialvmess
-wget -O /usr/bin/trialvless "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/trialtrojan.sh" && chmod +x /usr/bin/trialtrojan
-wget -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
-wget -O /usr/bin/trialssh "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
-wget -O /usr/bin/autocpu "https://raw.githubusercontent.com/Dharmavpn/v/main/install/autocpu.sh" && chmod +x /usr/bin/autocpu
-wget -O /usr/bin/bantwidth "https://raw.githubusercontent.com/Dharmavpn/v/main/install/bantwidth" && chmod +x /usr/bin/autocpu
+wget -O /usr/bin/menu "https://raw.githubusercontent.com/darnix1/v/main/menu/menu.sh" && chmod +x /usr/bin/menu
+wget -O /usr/bin/m-vmess "https://raw.githubusercontent.com/darnix1/v/main/menu/m-vmess.sh" && chmod +x /usr/bin/m-vmess
+wget -O /usr/bin/m-vless "https://raw.githubusercontent.com/darnix1/v/main/menu/m-vless.sh" && chmod +x /usr/bin/m-vless
+wget -O /usr/bin/m-trojan "https://raw.githubusercontent.com/darnix1/v/main/menu/m-trojan.sh" && chmod +x /usr/bin/m-trojan
+wget -O /usr/bin/m-system "https://raw.githubusercontent.com/darnix1/v/main/menu/m-system.sh" && chmod +x /usr/bin/m-system
+wget -O /usr/bin/m-sshovpn "https://raw.githubusercontent.com/darnix1/v/main/menu/m-sshovpn.sh" && chmod +x /usr/bin/m-sshovpn
+wget -O /usr/bin/m-ssws "https://raw.githubusercontent.com/darnix1/v/main/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
+wget -O /usr/bin/running "https://raw.githubusercontent.com/darnix1/v/main/menu/running.sh" && chmod +x /usr/bin/running
+wget -O /usr/bin/m-update "https://raw.githubusercontent.com/darnix1/v/main/menu/m-update.sh" && chmod +x /usr/bin/m-update
+wget -O /usr/bin/m-backup "https://raw.githubusercontent.com/darnix1/v/main/menu/m-backup.sh" && chmod +x /usr/bin/m-backup
+wget -O /usr/bin/m-theme "https://raw.githubusercontent.com/darnix1/v/main/menu/m-theme.sh" && chmod +x /usr/bin/m-theme
+wget -O /usr/bin/m-ip "https://raw.githubusercontent.com/darnix1/v/main/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
+wget -O /usr/bin/m-bot "https://raw.githubusercontent.com/darnix1/v/main/menu/m-bot.sh" && chmod +x /usr/bin/m-bot
+wget -O /usr/bin/update "https://raw.githubusercontent.com/darnix1/v/main/menu/update.sh" && chmod +x /usr/bin/update
+wget -O /usr/bin/ws-dropbear "https://raw.githubusercontent.com/darnix1/v/main/sshws/ws-dropbear" && chmod +x /usr/bin/ws-dropbear
+wget -O /usr/bin/bckpbot "https://raw.githubusercontent.com/darnix1/v/main/menu/bckpbot.sh" && chmod +x /usr/bin/bckpbot
+wget -O /usr/bin/tendang "https://raw.githubusercontent.com/darnix1/v/main/menu/tendang.sh" && chmod +x /usr/bin/tendang
+wget -O /usr/bin/bottelegram "https://raw.githubusercontent.com/darnix1/v/main/menu/bottelegram.sh" && chmod +x /usr/bin/bottelegram
+wget -O /usr/bin/backup "https://raw.githubusercontent.com/darnix1/v/main/menu/backup.sh" && chmod +x /usr/bin/backup
+wget -O /usr/bin/restore "https://raw.githubusercontent.com/darnix1/v/main/menu/restore.sh" && chmod +x /usr/bin/restore
+wget -O /usr/bin/cleaner "https://raw.githubusercontent.com/darnix1/v/main/install/cleaner.sh" && chmod +x /usr/bin/cleaner
+wget -O /usr/bin/m-allxray "https://raw.githubusercontent.com/darnix1/v/main/menu/m-allxray.sh" && chmod +x /usr/bin/m-allxray
+wget -O /usr/bin/xraylimit "https://raw.githubusercontent.com/darnix1/v/main/menu/xraylimit.sh" && chmod +x /usr/bin/xraylimit
+wget -O /usr/bin/xp "https://raw.githubusercontent.com/darnix1/v/main/install/xp.sh" && chmod +x /usr/bin/xp
+wget -O /usr/bin/trialvmess "https://raw.githubusercontent.com/darnix1/v/main/menu/trialvmess.sh" && chmod +x /usr/bin/trialvmess
+wget -O /usr/bin/trialvless "https://raw.githubusercontent.com/darnix1/v/main/menu/trialtrojan.sh" && chmod +x /usr/bin/trialtrojan
+wget -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/darnix1/v/main/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
+wget -O /usr/bin/trialssh "https://raw.githubusercontent.com/darnix1/v/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
+wget -O /usr/bin/autocpu "https://raw.githubusercontent.com/darnix1/v/main/install/autocpu.sh" && chmod +x /usr/bin/autocpu
+wget -O /usr/bin/bantwidth "https://raw.githubusercontent.com/darnix1/v/main/install/bantwidth" && chmod +x /usr/bin/autocpu
 chmod +x menu
 chmod +x m-vmess
 chmod +x m-vless
