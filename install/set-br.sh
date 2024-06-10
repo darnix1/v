@@ -9,10 +9,10 @@ make install
 cd
 rm -rf wondershaper
 cd /usr/bin
-wget -O backup "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/Dharmavpn/v/main/menu/restore.sh"
-wget -O cleaner "https://raw.githubusercontent.com/Dharmavpn/v/main/install/cleaner.sh"
-wget -O xp "https://raw.githubusercontent.com/Dharmavpn/v/main/install/xp.sh"
+wget -O backup "https://raw.githubusercontent.com/darnix1/v/main/menu/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/darnix1/v/main/menu/restore.sh"
+wget -O cleaner "https://raw.githubusercontent.com/darnix1/v/main/install/cleaner.sh"
+wget -O xp "https://raw.githubusercontent.com/darnix1/v/main/install/xp.sh"
 chmod +x /usr/bin/backup
 chmod +x /usr/bin/restore
 chmod +x /usr/bin/cleaner
@@ -51,7 +51,7 @@ service cron restart > /dev/null 2>&1
 
 # > Pasang Limit
 
-wget "https://raw.githubusercontent.com/Dharmavpn/v/main/bin/limit.sh" >/dev/null 2>&1
+wget "https://raw.githubusercontent.com/darnix1/v/main/bin/limit.sh" >/dev/null 2>&1
 
 chmod +x limit.sh && bash limit.sh >/dev/null 2>&1
     
