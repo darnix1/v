@@ -1057,6 +1057,11 @@ else
 echo "$(((bytes + 1073741823) / 1073741824)) GB"
 fi
 }
+function convert_to_mb() {
+    local -i bytes=$1
+    echo "$(((bytes + 1048575) / 1048576))MB"
+}
+
 function cek-vmess(){
 clear
 xrayy=$(cat /var/log/xray/access.log | wc -l)
@@ -1099,11 +1104,13 @@ tess=0
 if [[ ${vmhas} -gt $tess ]]; then
 byt=$(cat /etc/limit/vmess/${vmuser})
 gb=$(convert ${byt})
+mb=$(convert_to_mb ${byt})
 lim=$(cat /etc/vmess/${vmuser})
 lim2=$(convert ${lim})
 echo -e "$COLOR1${NC} USERNAME : \033[0;33m$vmuser"
 echo -e "$COLOR1${NC} IP LOGIN : \033[0;33m$vmhas"
 echo -e "$COLOR1${NC} USAGE : \033[0;33m$gb"
+echo -e "$COLOR1${NC} USAGE MB : \033[0;33m${mb}"
 echo -e "$COLOR1${NC} LIMIT : \033[0;33m$lim2"
 echo -e ""
 fi
