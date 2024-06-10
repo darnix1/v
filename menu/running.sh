@@ -14,7 +14,7 @@ CITY=$(curl -s ipinfo.io/city )
 ipsaya=$(wget -qO- ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/darnix1/permission/main/ipmini"
 checking_sc() {
 useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
 if [[ $date_list < $useexp ]]; then
@@ -38,7 +38,7 @@ if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
 rm -f /home/needupdate > /dev/null 2>&1
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/Dharmavpn/permission/main/ipmini | grep $MYIP | awk '{print $3}')
+Exp=$(curl -sS https://raw.githubusercontent.com/darnix1/permission/main/ipmini | grep $MYIP | awk '{print $3}')
 fi
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
