@@ -162,7 +162,7 @@ exit
 clear
 }
 madmin=$(curl -sS https://raw.githubusercontent.com/darnix1/permission/main/ipmini | grep $MYIP | awk '{print $5}')
-checking_sc
+#checking_sc
 cd
 if [ ! -e /etc/per/id ]; then
 mkdir -p /etc/per
